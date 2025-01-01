@@ -1,8 +1,14 @@
 from django.urls import path
+from rest_framework import routers
 
-from lesson.views import LessonView
+from lesson.views import LessonViewSet
 
 app_name = 'lessons'
-urlpatterns = [
-  path('', LessonView.as_view(), name='lesson-list')
-]
+router = routers.SimpleRouter()
+router.register(r"", LessonViewSet, basename='lesson')
+urlpatterns = router.urls
+
+# urlpatterns = [
+#   path('lessons/', LessonView.as_view(), name='lesson-list'),
+#   path('lessons/<int:pk>/', LessonDetailView.as_view(), name='lesson-detail'),
+# ]
