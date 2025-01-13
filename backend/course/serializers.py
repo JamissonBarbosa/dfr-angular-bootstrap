@@ -10,5 +10,5 @@ class CourseSerializer(serializers.ModelSerializer):
         # extra_kwargs = {
         #   '_id': {'source': 'id'},
         # }
-        
+        depth = 1
         #fields = '__all__'
